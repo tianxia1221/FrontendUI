@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+
+     <div form-directive>
+        <p>itl's in directive</p>
+        <p>itl's in directive1</p>
+    </div>
+    <!--<meta charset="utf-8">-->
+    <script src="angular.min.js"></script>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope) {
+        });
+        app.directive("formDirective", function () {
+        return {
+            restrict: "A",        
+            transclude: true,
+            template: "<h1>header</h1><p>this is paragraph</p><div ng-transclude></div><div ng-transclude></div>"
+        }
+    });
+
+    </script>
+</body>
+
+</html>
